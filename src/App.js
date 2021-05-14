@@ -10,9 +10,14 @@ function App() {
 
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
+  // isActive and isPaused are used to know whether the stopwatch is  running or paused 
+
   const [time, setTime] = useState(0);
+  // time varibale will have the value of milliseconds passes after the start of stopwatch
   const [history, setHistory] = useState([]); 
+  //history is an array of all the activity done(Start, Pause, Resume, Reset) and timer value at that time
   
+  // every time the state of stopwatch is changed the component is rerendered using useEffect()
   useEffect(() => {
     let interval = null;
   
@@ -28,6 +33,9 @@ function App() {
     };
   }, [isActive, isPaused]);
   
+  // fucntions with prefix handle are used to change the state of Stopwatch 
+  // and will add the repective state change to the history
+
   const handleStart = () => {
     if(isPaused === true){
       let temp = {timerValue: time, action: "Start"}; 
@@ -59,6 +67,8 @@ function App() {
     setTime(0);
   };
 
+  // Timer component is used to show the stopwatch and the timer value is passed as props
+  // History component is used to show the history and histoty array is passed as props which contains all the state changes
   return (
     <div className="App">
       <Router>
