@@ -60,7 +60,7 @@ function App() {
   };
 
   return (
-    <div className="App" style={{background:"#ffc6ff"}}>
+    <div className="App">
       <Router>
         <Switch>
           <Route exact path='/'>

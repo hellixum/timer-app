@@ -6,6 +6,8 @@
 }
 
 .App {
+    border-radius: 10px;
+    background: #caf0f8;
     text-align: center;
     max-width: 800px;
     margin-left: auto;
